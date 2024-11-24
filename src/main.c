@@ -24,38 +24,89 @@ int main(void)
         case3AccountPointers[i] = case3InputNums[i];
     }
 
+#ifndef DEBUG
     printf("TEST CASE %ld ", ++currentTestCase);
     assert(
+#else
+    if (
+#endif /* DEBUG */
             maximumWealth(
                 case1AccountPointers,
                 case1AccountsSize,
                 (int*) case1AccountsColSize
             )
             == case1OutputNums
+#ifndef DEBUG
     );
     printf("PASSED!\n");
+#else
+    )
+    {
+        printf("TEST CASE %ld ", ++currentTestCase);
+        printf("PASSED!\n");
+    }
+    else
+    {
+        printf("TEST CASE %ld ", ++currentTestCase);
+        printf("failed!\n");
+    }
+#endif /* DEBUG */
 
+#ifndef DEBUG
     printf("TEST CASE %ld ", ++currentTestCase);
     assert(
+#else
+    if (
+#endif /* DEBUG */
             maximumWealth(
                 case2AccountPointers,
                 case2AccountsSize,
                 (int*) case2AccountsColSize
             )
             == case2OutputNums
+#ifndef DEBUG
     );
     printf("PASSED!\n");
+#else
+    )
+    {
+        printf("TEST CASE %ld ", ++currentTestCase);
+        printf("PASSED!\n");
+    }
+    else
+    {
+        printf("TEST CASE %ld ", ++currentTestCase);
+        printf("failed!\n");
+    }
+#endif /* DEBUG */
 
+#ifndef DEBUG
     printf("TEST CASE %ld ", ++currentTestCase);
     assert(
+#else
+    if (
+#endif /* DEBUG */
             maximumWealth(
                 case3AccountPointers,
                 case3AccountsSize,
                 (int*) case3AccountsColSize
             )
             == case3OutputNums
+#ifndef DEBUG
     );
     printf("PASSED!\n");
+#else
+    )
+    {
+        printf("TEST CASE %ld ", ++currentTestCase);
+        printf("PASSED!\n");
+    }
+    else
+    {
+        printf("TEST CASE %ld ", ++currentTestCase);
+        printf("failed!\n");
+    }
+#endif /* DEBUG */
 
     return 0;
 }

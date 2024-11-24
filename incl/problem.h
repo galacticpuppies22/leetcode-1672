@@ -7,6 +7,10 @@ n == accounts[i].length
 1 <= accounts[i][j] <= 100s
 */
 
+// #ifndef DEBUG //the reason we define DEBUG here is because we are debugging the problem... and also main sometimes, where this header file is included ;)
+//     #define DEBUG
+// #endif /* DEBUG */
+
 /*------------------------Case 1------------------------*/
 const int case1AccountsSize = 2;
 const int case1AccountsColSize[2] = {3, 3};
