@@ -17,6 +17,12 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 # set(CMAKE_CXX_STANDARD 11) 
 # set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Add the DEBUG definition for debugging builds 
+if(CMAKE_BUILD_TYPE STREQUAL "Debug") 
+  # Add the DEBUG definition 
+  add_definitions(-DDEBUG)
+endif()
+
 include_directories(${CMAKE_SOURCE_DIR}/incl)
 
 add_executable(myexample src/main.c src/problem.c)
